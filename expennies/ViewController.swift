@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        listenForChartUpdates()
     }
 
     @IBAction func simulateButtonPressed(_ sender: Any) {
