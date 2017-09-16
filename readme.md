@@ -1,7 +1,7 @@
 # Example on how to build a realtime chart on iOS using Pusher
 [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/neoighodaro?utm_source=github&utm_medium=button&utm_term=neoighodaro&utm_campaign=github)
 
-![]()
+![](https://dl.dropbox.com/s/pobbjdhg6g59kwm/build-realtime-chart-in-ios-using-pusher.gif)
 
 -----
 
