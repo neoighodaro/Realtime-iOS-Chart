@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="expennies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,52 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gA-K0-qmM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Lw-bV-9cc">
+                                        <rect key="frame" x="8" y="30" width="359" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Simulate Visits"/>
+                                        <connections>
+                                            <action selector="simulateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZJ3-Au-0fK"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="1XQ-L0-33D"/>
+                                    <constraint firstItem="9Lw-bV-9cc" firstAttribute="top" secondItem="2gA-K0-qmM" secondAttribute="top" constant="30" id="TBf-7T-T1o"/>
+                                    <constraint firstItem="9Lw-bV-9cc" firstAttribute="bottom" secondItem="2gA-K0-qmM" secondAttribute="bottomMargin" id="boB-1E-cFa"/>
+                                    <constraint firstItem="9Lw-bV-9cc" firstAttribute="leading" secondItem="2gA-K0-qmM" secondAttribute="leadingMargin" id="l5m-Rj-QaJ"/>
+                                    <constraint firstItem="9Lw-bV-9cc" firstAttribute="trailing" secondItem="2gA-K0-qmM" secondAttribute="trailingMargin" id="mtD-P3-6nv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AF6-av-Zur" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="78" width="375" height="589"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2gA-K0-qmM" secondAttribute="trailing" id="4h0-1Z-CMf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AF6-av-Zur" secondAttribute="bottom" id="EiX-bS-M49"/>
+                            <constraint firstItem="2gA-K0-qmM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JEU-tW-A0C"/>
+                            <constraint firstItem="AF6-av-Zur" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="K5N-4i-kvl"/>
+                            <constraint firstItem="2gA-K0-qmM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="f2L-jC-xWc"/>
+                            <constraint firstAttribute="trailing" secondItem="AF6-av-Zur" secondAttribute="trailing" id="fUf-Qg-Bpm"/>
+                            <constraint firstItem="AF6-av-Zur" firstAttribute="top" secondItem="2gA-K0-qmM" secondAttribute="bottom" id="jt4-py-u2y"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chartView" destination="AF6-av-Zur" id="sRS-Pk-G6Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>
